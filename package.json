@@ -1,0 +1,16 @@
+{
+  "author": "Geoffrey Grosenbach <boss@topfunky.com> (http://peepcode.com)",
+  "name": "stats-js",
+  "description": "Cumulative statistical calculations.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/topfunky/stats-js.git"
+  },
+  "main": "lib/stats.js",
+  "engines": {
+    "node": "~v0.4.8"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
