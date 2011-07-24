@@ -7,6 +7,18 @@
 #                http://peepcode.com
 class Stats
 
+  # Optionally start a new object with existing data.
+  #
+  # * `sum` - Total of all samples recorded
+  # * `sumsq` - Cumulative sum of squares of all samples
+  # * `n` - Number of samples
+  # * `min` - Smallest sample
+  # * `max` - Largest sample
+  #
+  # After adding samples, the following properties will also be available:
+  #
+  # * `sd` - Standard deviation
+  # * `mean` - Average
   constructor: (@sum=0, @sumsq=0, @n=0, @min=0, @max=0) ->
 
   # Add a single data sample to the calculations.
