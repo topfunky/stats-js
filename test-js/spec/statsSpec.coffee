@@ -83,6 +83,35 @@ describe "stats", ->
       it "emits mean", ->
         (expect @attributes.mean).toEqual 33.333333333333336
 
+
+  describe "array of samples", ->
+
+    beforeEach ->
+      @stats = new Stats()
+      @stats.samples [42, 25, 33]
+
+    it "calculates sum", ->
+      (expect @stats.sum).toEqual 100
+
+    it "calculates sumsq", ->
+      (expect @stats.sumsq).toEqual (42*42)+(25*25)+(33*33)
+
+    it "calculates n", ->
+      (expect @stats.n).toEqual 3
+
+    it "calculates min", ->
+      (expect @stats.min).toEqual 25
+
+    it "calculates max", ->
+      (expect @stats.max).toEqual 42
+
+    it "calculates sd", ->
+      (expect @stats.sd).toEqual 8.504900548115378
+
+    it "calculates mean", ->
+      (expect @stats.mean).toEqual 33.333333333333336
+
+
   describe "combine with another stats object", ->
 
     beforeEach ->

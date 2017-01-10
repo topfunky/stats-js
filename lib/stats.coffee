@@ -21,6 +21,11 @@ class Stats
   # * `mean` - Average
   constructor: (@sum=0, @sumsq=0, @n=0, @min=0, @max=0) ->
 
+  samples: (array) ->
+    for a in array
+      @.sample a
+    @
+
   # Add a single data sample to the calculations.
   sample: (s) ->
     @sum += s

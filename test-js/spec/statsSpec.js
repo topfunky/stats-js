@@ -81,6 +81,33 @@ describe("stats", function() {
       });
     });
   });
+  describe("array of samples", function() {
+    beforeEach(function() {
+      this.stats = new Stats();
+      return this.stats.samples([42, 25, 33]);
+    });
+    it("calculates sum", function() {
+      return (expect(this.stats.sum)).toEqual(100);
+    });
+    it("calculates sumsq", function() {
+      return (expect(this.stats.sumsq)).toEqual((42 * 42) + (25 * 25) + (33 * 33));
+    });
+    it("calculates n", function() {
+      return (expect(this.stats.n)).toEqual(3);
+    });
+    it("calculates min", function() {
+      return (expect(this.stats.min)).toEqual(25);
+    });
+    it("calculates max", function() {
+      return (expect(this.stats.max)).toEqual(42);
+    });
+    it("calculates sd", function() {
+      return (expect(this.stats.sd)).toEqual(8.504900548115378);
+    });
+    return it("calculates mean", function() {
+      return (expect(this.stats.mean)).toEqual(33.333333333333336);
+    });
+  });
   return describe("combine with another stats object", function() {
     beforeEach(function() {
       var stats1, stats2;
