@@ -66,4 +66,5 @@ class Stats
   # Return attributes for JSON serialization.
   toJSON: -> { @sum, @sumsq, @n, @min, @max, @sd, @mean }
 
+module.exports = Stats
 
